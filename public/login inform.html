@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login page</title>
+    <style>
+      .bg {
+        background-image: url("images/Pig_section.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
+
+      .blur-layer {
+        position: absolute;
+        inset: 0;
+        backdrop-filter: blur(2px);
+        background: rgba(0, 0, 0, 0.25);
+      }
+
+      body {
+        font-family:
+          "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        display: inline-block;
+        border: 2px solid gray;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: rgb(250, 255, 240);
+        width: 100%;
+        color: forestgreen;
+        padding: 5px;
+        margin: 10px 0px;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        opacity: 0.7;
+      }
+      #Cancel_btn {
+        width: auto;
+        padding: 5px;
+        margin: 10px 5px;
+      }
+      .login-wrapper {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5px;
+      }
+
+      .login-card {
+        background: greenyellow;
+        padding: 30px;
+        width: 350px;
+        border-radius: 10px;
+        border: 5px solid forestgreen;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body class="bg">
+    <div class="blur-layer">
+      <div class="login-wrapper">
+        <h2 style="text-align: center">
+          <img
+            src="images/Okomu_logo_nobg.png"
+            alt="farm logo"
+            width="200"
+          /><br />
+          Hello there!
+        </h2>
+
+        <form class="login-card">
+          <label>Email</label> <br />
+          <input type="email" id="email" name="email" />
+          <br /><br />
+
+          <label>Password</label><br />
+          <input type="Password" name="password" maxlength="20" />
+
+          <br /><br />
+
+          <button type="Submit"><b>Log In</b></button><br />
+          <input type="checkbox" id="remember password" /> Remember password
+          <button type="Button" id="Cancel_btn"><b>Cancel</b></button><br />
+          <a href="#">Forget password</a>
+          <a href="Users register.html">Register</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
