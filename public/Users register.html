@@ -1,52 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Users register</title>
-</head>
-<body style = "font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-    <form style = "border: 3px solid forestgreen;">
-        <div style = "padding: 25px; background-color: greenyellow;">
-            <h4 style = "text-align: center;">Admin Registration Form</h4>
-            <label><b>Title</b></label>
-            <select id = "Title">
+    <link rel="stylesheet" href="Dolly_forms_style.css" />
+  </head>
+  <body>
+    <div class="user_container">
+      <form action="">
+        <div class="user_details">
+          <h4>Admin Registration Form</h4>
+          <div class="user_form_container">
+            <div class="user_form_control full-width">
+              <label for="title">Title</label>
+              <select id="title" name="title" required>
                 <option value="Mr.">Mr.</option>
                 <option value="Miss/Mrs.">Miss/Mrs.</option>
                 <option value="Dr.">Dr.</option>
-            </select>
-            <br><br>
-            <label>First name</label> 
-            <input type = "text" name = "first name">
+              </select>
+            </div>
 
-            <label>Last name</label> 
-            <input type = "text" name = "last name">
+            <div class="user_form_control">
+              <label for="first_name">First name</label>
+              <input
+                id="first_name"
+                name="first_name"
+                type="text"
+                placeholder="Enter first name..."
+                required
+              />
+            </div>
 
-            <br><br>
+            <div class="user_form_control">
+              <label for="last_name">Last name</label>
+              <input
+                id="last_name"
+                name="last_name"
+                type="text"
+                placeholder="Enter last name..."
+                required
+              />
+            </div>
 
-            <Label>Email</Label> <br>
-            <input type="email" id = "Email" name="email">
+            <div class="user_form_control full-width">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Enter email..."
+                required
+              />
+            </div>
 
-            <br><br>
+            <div class="user_form_control">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                maxlength="20"
+                placeholder="Please enter your password"
+                required
+              />
+            </div>
 
-            <label>Password</label><br>
-            <input type="password" id = "password name="password" maxlength="20">
-            
-            <br><br>
+            <div class="user_form_control">
+              <label for="re_enter_password">Re-enter Password</label>
+              <input
+                id="re_enter_password"
+                name="re_enter_password"
+                type="password"
+                maxlength="20"
+                placeholder="Please re-enter your password"
+                required
+              />
+            </div>
 
-            <label>Re-enter Password</label><br>
-            <input type="password" id = "password "name="password" maxlength="20">
+            <div class="about_you_control">
+              <label for="about_you">About you</label>
+              <textarea
+                id="about_you"
+                name="about_you"
+                rows="5"
+                cols="80"
+                placeholder="Please let us get to know you more....."
+                required
+              ></textarea>
+            </div>
 
-            <br><br>
-            <br><br>
-            About you<br>
-            <textarea rows ="5" cols ="80" name = "About you">
-
-                Please let us get to know you more.....
-            </textarea>
-            <br><br>
-            <input type="Submit" value ="Submit">
+            <div class="button_container">
+              <button id="register" name="register" type="submit">
+                Register
+              </button>
+            </div>
+          </div>
         </div>
-    </form>
-</body>
+      </form>
+    </div>
+  </body>
 </html>

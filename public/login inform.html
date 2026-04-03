@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login page</title>
+
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       .bg {
         background-image: url("images/Pig_section.jpg");
         background-size: cover;
@@ -67,7 +74,7 @@
         width: 350px;
         border-radius: 10px;
         border: 5px solid forestgreen;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 15px rgba(12, 20, 050, 0.3);
       }
     </style>
   </head>
@@ -80,16 +87,27 @@
             alt="farm logo"
             width="200"
           /><br />
-          Hello there!
+          <b>Hello there!</b>
         </h2>
 
         <form class="login-card">
-          <label>Email</label> <br />
-          <input type="email" id="email" name="email" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Username or Email"
+            required
+          />
           <br /><br />
 
-          <label>Password</label><br />
-          <input type="Password" name="password" maxlength="20" />
+          <input
+            id="password"
+            type="Password"
+            name="password"
+            maxlength="20"
+            placeholder="Password"
+            required
+          />
 
           <br /><br />
 

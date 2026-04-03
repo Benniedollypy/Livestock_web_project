@@ -1,0 +1,296 @@
+
+/*GENERAL PAGE STYLLING*/
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Page Background ===== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("images/Pig_section.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/*USERS REGISTER STYLLING*/
+
+/* ===== Outer Container ===== */
+.user_container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ===== Form Card ===== */
+.user_details {
+  max-width: 800px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 0 auto;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+/* ===== Form Grid ===== */
+.user_form_container {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 20px; /* row gap, column gap */
+  text-align: left;
+}
+
+/* ===== Form Control ===== */
+.user_form_control {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* NEW — modern spacing */
+}
+
+/* ===== To span Title & Email labels ===== */
+.full-width{
+    grid-column: 1 / -1;
+}
+
+/* Full-width fields */
+.about_you_control,
+.button_container {
+  grid-column: 1 / -1;
+}
+
+/* ===== Labels ===== */
+label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ===== Inputs ===== */
+input,
+select,
+textarea {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+
+/* ===== Focus State ===== */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: forestgreen;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+/* ===== About You Full Width ===== */
+.about_you_control {
+  grid-column: 1 / -1;
+  font-weight: 600;
+}
+
+.about_you_control textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ===== Button Container ===== */
+.button_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* ===== Submit Button ===== */
+button,
+input[type="submit"] {
+  background-color: forestgreen;
+  border: none;
+  padding: 10px 24px;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* ===== Button Hover ===== */
+button:hover,
+input[type="submit"]:hover {
+  background-color: #14532d;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .user_form_container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/*ANIMAL REGISTER STYLLING*/
+
+/* ===== Outer Container ===== */
+.animal_container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== Form Card ===== */
+.animal_input {
+  max-width: 800px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 0 auto;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  
+
+/* ===== layout ===== */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 20px; /* row gap, column gap */
+  text-align: left
+}
+
+.dark-theme {
+  background: #111;
+}
+
+/* ===== Form head ===== */
+.form_head {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ===== Form Control ===== */
+.animal_control {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* NEW — modern spacing */
+}
+
+/* ===== To span Identification Number & DOB labels ===== */
+.full-width{
+    grid-column: 1 / -1;
+}
+
+/* Full-width fields */
+.button_container {
+  grid-column: 1 / -1;
+}
+
+/* ===== Labels ===== */
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1d293a;
+}
+
+/* ===== Inputs ===== */
+input,
+select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+
+/* ===== Focus State ===== */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: forestgreen;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+/* ===== Button Container ===== */
+.button_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* ===== Submit Button ===== */
+button,
+input[type="submit"] {
+  background-color: forestgreen;
+  border: none;
+  padding: 10px 24px;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* ===== Radio button ===== */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.radio_group {
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  border-radius: 6px;
+}
+
+.radio_group legend {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.radio_option {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 16px;
+ 
+}
+
+.radio_group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* ===== Button Hover ===== */
+button:hover,
+input[type="submit"]:hover {
+  background-color: #14532d;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .animal_input {
+    grid-template-columns: 1fr;
+  }
+}
