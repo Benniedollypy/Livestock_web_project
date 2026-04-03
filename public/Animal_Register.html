@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <link rel="stylesheet" href="Dolly_forms_style.css" />
+  </head>
+  <body class="animal_reg_page">
+    <div class="animal_container">
+      <form class="animal_reg">
+        <div class="animal_input">
+          <div class="form_head">
+            <h4>Animal Registration Form</h4>
+          </div>
+
+          <div class="animal_control full-width">
+            <label for="identification_number">Identification Number:</label>
+            <input
+              id="identification_number"
+              name="identification_number"
+              type="text"
+              placeholder="Pr-012/003"
+              required
+            />
+          </div>
+
+          <div class="animal_control">
+            <label for="specie">Species:</label>
+            <select id="specie" name="specie" required>
+              <option value="">Select Specie</option>
+              <option value="ovine">Ovine</option>
+              <option value="porcine">Porcine</option>
+              <option value="caprine">Caprine</option>
+              <option value="bovine">Bovine</option>
+              <option value="canine">Canine</option>
+            </select>
+          </div>
+
+          <!--The breed will be dependent on the selected specie-->
+          <div class="animal_control">
+            <label for="breed">Breed</label>
+            <select id="breed" name="breed" required>
+              <option value="">Select Breed</option>
+              <option value="large_white" data-specie="porcine">
+                Large White
+              </option>
+              <option value="landrace" data-specie="porcine">Landrace</option>
+              <option value="camborough" data-specie="porcine">
+                Camborough
+              </option>
+              <option value="duroc" data-specie="porcine">Duroc</option>
+              <option value="uda" data-specie="ovine">Uda</option>
+              <option value="wad_cross" data-specie="ovine">WAD-cross</option>
+              <option value="red_sokoto" data-specie="caprine">
+                Red Sokoto
+              </option>
+              <option value="sahel" data-specie="caprine">Sahel</option>
+              <option value="mongrel" data-specie="canine">Mongrel</option>
+              <option value="mongrel_cross" data-specie="canine">
+                Mongrel-cross
+              </option>
+              <option value="sokoto_gudali" data-specie="bovine">
+                Sokoto Gudali
+              </option>
+              <option value="white_fulani" data-specie="bovine">
+                White Fulani
+              </option>
+            </select>
+          </div>
+
+          <div class="animal_control">
+            <label for="date_of_birth">Date of birth:</label>
+            <input id="date_of_birth" name="date_of_birth" type="date" />
+          </div>
+
+          <!--The category will be dependent on the date of birth inputed-->
+          <div class="animal_control">
+            <label for="category">Category</label>
+            <select id="category" name="category" disabled>
+              <option value="">Select Category</option>
+              <option value="lamb" data-specie="ovine">Lamb</option>
+              <option value="weaner" data-specie="all">Weaner</option>
+              <option value="grower" data-specie="all">Grower</option>
+              <option value="adult" data-specie="all">Adult</option>
+              <option value="piglet" data-specie="porcine">Piglet</option>
+              <option value="kid" data-specie="caprine">Kid</option>
+            </select>
+          </div>
+
+          <div class="form_group">
+            <fieldset class="radio_group">
+              <legend>Sex</legend>
+
+              <label class="radio_option"
+                ><input
+                  id="male"
+                  type="radio"
+                  name="sex"
+                  value="male"
+                  required
+                />Male</label
+              >
+
+              <label class="radio_option"
+                ><input
+                  id="female"
+                  type="radio"
+                  name="sex"
+                  value="female"
+                  required
+                />Female</label
+              >
+            </fieldset>
+          </div>
+
+          <div class="form_group">
+            <fieldset class="radio_group">
+              <legend>Claim</legend>
+
+              <label class="radio_option"
+                ><input
+                  id="purchase"
+                  type="radio"
+                  name="claim"
+                  required
+                />Purchase</label
+              >
+
+              <label class="radio_option"
+                ><input
+                  id="birth"
+                  type="radio"
+                  name="claim"
+                  required
+                />Birth</label
+              >
+            </fieldset>
+          </div>
+
+          <div class="animal_control">
+            <label for="owner">Owner</label>
+            <select id="owner" name="owner" required>
+              <option value="">Select Owner</option>
+              <option value="okomu">Okomu</option>
+              <option value="c.a">C.A</option>
+            </select>
+          </div>
+
+          <div class="animal_control">
+            <label for="sire_id">Sire I.D No.</label>
+            <input id="sire_id" type="text" name="sire_id" />
+
+            <label for="dam_id">Dam I.D No.</label>
+            <input id="dam_id" type="text" name="dam_id" />
+          </div>
+
+          <div class="button_container">
+            <button id="submit" name="submit" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      var submit = document.getElementById("submit");
+      submit.addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("Animal biodata submitted successfully");
+      });
+
+      var specie = document.getElementById("specie");
+      var breed = document.getElementById("breed");
+      var category = document.getElementById("category");
+      var date_of_birth = document.getElementById("date_of_birth");
+
+      specie.addEventListener("change", function (e) {
+        var selectedSpecie = specie.value;
+        var displaySpecie = specie.querySelectorAll("option");
+        var displayBreed = breed.querySelectorAll("option");
+        var displayCategory = category.querySelectorAll("option");
+
+        for (var i = 0; i < displayBreed.length; i++) {
+          if (displayBreed[i].value === "") {
+            displayBreed[i].hidden = false;
+            continue;
+          }
+
+          if (displayBreed[i].dataset.specie === selectedSpecie) {
+            displayBreed[i].hidden = false;
+          } else {
+            displayBreed[i].hidden = true;
+          }
+        }
+        // Clear out breedSelection if new specie is selected
+        breed.value = "";
+      });
+
+      function currentAge_in_Month(dob) {
+        const today = new Date();
+        const birth_date = new Date(dob);
+
+        let year_diff = today.getFullYear() - birth_date.getFullYear();
+        let month_diff = today.getMonth() - birth_date.getMonth();
+        let totalMonth = year_diff * 12 + month_diff;
+
+        if (today.getDate() < birth_date.getDate()) {
+          totalMonth--;
+        }
+        return totalMonth;
+      }
+
+      function updateCategory() {
+        var selectedSpecie = specie.value;
+        var birthDate = date_of_birth.value;
+
+        if (!selectedSpecie || !birthDate) return;
+
+        var currentAge = currentAge_in_Month(birthDate);
+
+        if (selectedSpecie === "ovine") {
+          if (currentAge < 3) {
+            category.value = "lamb";
+          } else if (currentAge < 6) {
+            category.value = "weaner";
+          } else if (currentAge < 12) {
+            category.value = "grower";
+          } else {
+            category.value = "adult";
+          }
+        } else if (selectedSpecie === "caprine") {
+          if (currentAge < 3) {
+            category.value = "kid";
+          } else if (currentAge < 6) {
+            category.value = "weaner";
+          } else if (currentAge < 12) {
+            category.value = "grower";
+          } else {
+            category.value = "adult";
+          }
+        } else if (selectedSpecie === "porcine") {
+          if (currentAge < 1) {
+            category.value = "piglet";
+          } else if (currentAge < 3) {
+            category.value = "weaner";
+          } else if (currentAge < 6) {
+            category.value = "grower";
+          } else {
+            category.value = "adult";
+          }
+        }
+      }
+      specie.addEventListener("change", updateCategory);
+      date_of_birth.addEventListener("change", updateCategory);
+    </script>
+  </body>
+</html>
